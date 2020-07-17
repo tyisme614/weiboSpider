@@ -12,8 +12,7 @@ class MySqlWriter(Writer):
         self.mysql_config = mysql_config
 
         # 创建'weibo'数据库
-        create_database = """CREATE DATABASE IF NOT EXISTS weibo DEFAULT
-                            CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci"""
+        create_database = """CREATE DATABASE IF NOT EXISTS weibo DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci"""
         self._mysql_create_database(create_database)
         self.mysql_config['db'] = 'weibo'
 
