@@ -34,7 +34,7 @@ class MySqlWriter(Writer):
                 u'系统中可能没有安装pymysql库，请先运行 pip install pymysql ，再运行程序')
             sys.exit()
         try:
-            connection = pymysql.connect(**self.mysql_config)
+            connection = pymysql.connect(db='weibo', user='root', passwd='pwd', host='localhost', port=7010)#pymysql.connect(**self.mysql_config)
             self._mysql_create(connection, sql)
         except pymysql.OperationalError:
             logger.warning(u'系统中可能没有安装或正确配置MySQL数据库，请先根据系统环境安装或配置MySQL，再运行程序')
